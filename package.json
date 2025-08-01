@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "build:extension": "./build.sh",
+    "build:extension:linux": "./build.sh",
+    "build:extension:windows" : "build.bat",
     "dev": "vite build --watch",
     "preview": "vite preview"
   },
