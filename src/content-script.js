@@ -1,9 +1,7 @@
 const heading = (() => {
-  for (let level = 1; level <= 6; level++) {
-    const el = document.querySelector(`h${level}`);
-    if (el && el.innerText.trim()) return el.innerText.trim();
-  }
-  return "(no heading)";
+  const h1 = document.querySelector("h1");
+  if (h1 && h1.innerText.trim()) return h1.innerText.trim();
+  return document.title || "(no heading)";
 })();
 
 const domain = new URL(location.href).hostname;
