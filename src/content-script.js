@@ -6,26 +6,26 @@ const getTitle = () => {
 const sendPageInfo = () => {
   const domain = new URL(location.href).hostname;
   const title = `${getTitle()} - ${domain}`;
-
-  chrome.runtime.sendMessage({
-    type: "NEW_LINK",
-    url: location.href,
-    title: title,
-  });
+  if (chrome.runtime?.id) {
+    chrome.runtime.sendMessage({
+      type: "NEW_LINK",
+      url: location.href,
+      title: `${title} - ${location.hostname}`,
+    });
+  }
 };
 
 let lastUrl = location.href;
+let timer;
 
 sendPageInfo();
 
 const observer = new MutationObserver(() => {
   if (location.href !== lastUrl) {
     lastUrl = location.href;
-    setTimeout(sendPageInfo, 2000);
+    clearTimeout(timer);
+    timer = setTimeout(sendPageInfo, 1000);
   }
 });
 
-observer.observe(document, {
-  subtree: true,
-  childList: true,
-});
+observer.observe(document, { childList: true, subtree: true });
