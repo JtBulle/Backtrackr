@@ -1,5 +1,5 @@
 chrome.runtime.onMessage.addListener((msg, sender) => {
-  if (msg.type !== "NEW_BREADCRUMB") return;
+  if (msg.type !== "NEW_LINK") return;
 
   chrome.storage.local.get({ trail: [] }, (data) => {
     const trail = data.trail;
