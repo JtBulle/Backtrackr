@@ -10,7 +10,7 @@ const sendPageInfo = () => {
     chrome.runtime.sendMessage({
       type: "NEW_LINK",
       url: location.href,
-      title: `${title} - ${location.hostname}`,
+      title: title,
     });
   }
 };
