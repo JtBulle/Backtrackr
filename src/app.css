@@ -16,3 +16,7 @@
   --color-success: oklch(0.7 0.05 160);
   --color-info: oklch(0.7 0.05 260);
 }
+
+.button-style {
+  @apply mt-3 w-24 cursor-pointer rounded border-none bg-text px-4 py-2 text-center text-base text-bg-dark hover:bg-text-muted;
+}
