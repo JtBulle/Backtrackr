@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Backtrackr",
-  "version": "1.0.0",
+  "description": "Effortless browsing history tracking. Retrace your steps and find previously visited pages in seconds.",
+  "version": "1.0.1",
   "permissions": ["storage"],
   "icons": {
     "16": "icons/icon16.png",
